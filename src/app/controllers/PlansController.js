@@ -66,7 +66,7 @@ class PlansController {
     });
 
     if (planExists) {
-      return res.status(400).json({ error: 'This plan already exists' });
+      return res.status(400).json({ error: 'You do not change any field' });
     }
 
     const {
