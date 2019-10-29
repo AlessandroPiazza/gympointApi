@@ -96,7 +96,9 @@ class PlansController {
 
   async delete(req, res) {
     const plan = await Plan.findByPk(req.params.id);
-
+    if (!plan) {
+      return res.status(400).json({ error: 'This plan does not exists to delete' });
+    }
     const {
       ìd, title, duration, price,
     } = await Plan.destroy({ where: { id: req.params.id } });

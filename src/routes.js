@@ -18,11 +18,14 @@ routes.post('/students', StudentController.store);
 
 routes.put('/students/:id', StudentController.update);
 
-routes.put('/plans/:id', PlansController.update);
-routes.delete('/plans/:id', PlansController.delete);
 routes.post('/plans', PlansController.store);
+routes.put('/plans/:id', PlansController.update);
 routes.get('/plans', PlansController.index);
+routes.delete('/plans/:id', PlansController.delete);
 
 routes.post('/registrations', RegistrationController.store);
+routes.put('/registrations/:id', RegistrationController.update);
+routes.get('/registrations/:id?', RegistrationController.index);
+routes.delete('/registrations/:id', RegistrationController.delete);
 
 export default routes;
