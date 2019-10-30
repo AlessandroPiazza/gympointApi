@@ -15,6 +15,7 @@
     "jsonjwt": "^0.1.1",
     "jsonwebtoken": "^8.5.1",
     "kill-port": "^1.6.0",
+    "mongoose": "^5.7.7",
     "nodemailer": "^6.3.1",
     "nodemailer-express-handlebars": "^3.1.0",
     "pg": "^7.12.1",
