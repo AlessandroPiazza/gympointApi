@@ -1,6 +1,6 @@
 
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('registrations', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('help_orders', {
     id: {
       type: Sequelize.INTEGER,
       allowNull: false,
@@ -14,24 +14,17 @@ module.exports = {
       onDelete: 'SET NULL',
       allowNull: false,
     },
-    plan_id: {
-      type: Sequelize.INTEGER,
-      references: { model: 'plans', key: 'id' },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
+    question: {
+      type: Sequelize.STRING,
       allowNull: false,
     },
-    start_date: {
+    answer: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    answer_at: {
       type: Sequelize.DATE,
-      allowNull: false,
-    },
-    end_date: {
-      type: Sequelize.DATE,
-      allowNull: false,
-    },
-    price: {
-      type: Sequelize.DOUBLE,
-      allowNull: false,
+      allowNull: true,
     },
     created_at: {
       type: Sequelize.DATE,
@@ -43,7 +36,7 @@ module.exports = {
     },
   }),
 
-  down: (queryInterface, Sequelize) => {
-    queryInterface.dropTable('registrations');
+  down: (queryInterface) => {
+    queryInterface.dropTable('help_orders');
   },
 };

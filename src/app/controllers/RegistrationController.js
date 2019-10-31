@@ -164,7 +164,7 @@ class RegistrationController {
       order: ['id'],
       attributes: ['start_date', 'end_date', 'price'],
       limit: 10,
-      offser: (page - 1) * 10,
+      offset: (page - 1) * 10,
       include: [
         {
           model: Student,
